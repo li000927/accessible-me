@@ -1,10 +1,37 @@
+/* Global Styles */
 body {
   font-family: 'Roboto', Helvetica, sans-serif;
-  background-color: grey;
+  color: #333;
+  background-color: rgb(250, 249, 236);
   margin: 0;
   padding: 0;
 }
 
+/* Skip Links Styles */
+.skip-links{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.skip-links a{
+  position: absolute;
+  top: -3em;
+  background-color: black;
+  color:white;
+  padding: .5em 1em;
+  font-weight: bold;
+  z-index: 100;
+}
+
+/* Focus Style for Links (including Skip Links) */
+a:focus{
+  position: static;
+  top: 0;
+  outline: 4px solid black; /* Add focus indicator */
+
+}
+
+/* Headings Styles */
 h1,
 h2,
 h3,
@@ -12,18 +39,23 @@ h4,
 h5,
 h6 {
   font-family: 'Stick No Bills', 'Roboto', Helvetica, sans-serif;
+ line-height: 1.4;
 }
 
+/* Container Styles */
 .container {
   max-width: 1080px;
   margin: 0 auto;
   padding: 0 1rem;
 }
 
+/* Image Styles */
 img {
   width: 100%;
+  height: 400px;
 }
 
+/* Main Navigation Styles */
 .main-nav ul {
   list-style: none;
   display: flex;
@@ -44,6 +76,7 @@ img {
   font-size: 1.25rem;
 }
 
+/* Form Field Styles */
 form input,
 form textarea {
   display: block;
@@ -52,17 +85,26 @@ form textarea {
   padding: .5rem 1rem;
 }
 
-form textarea {
+/* Form Field Styles */
+form input:focus,
+form textarea:focus {
+  outline: 4px solid #1500ff; /* Accessible focus style */
+  outline-offset: 2px;
+}
+
+/* Textarea Specific Styles */
+form textarea { 
   min-height: 150px;
   max-height: 150px;
   height: 150px;
   resize: none;
 }
 
+/* Form Button Styles */
 form button {
-  background: none;
-  border: 2px solid black;
-  padding: 1rem;
+  background-color: #9eeaf0;
+  border: 2px solid black;/* Add a black border for contrast */
+  padding: 1rem; /* Add padding for clickability */
   text-transform: uppercase;
 }
 
