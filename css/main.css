@@ -1,6 +1,6 @@
 /* Global Styles */
 body {
-  font-family: 'Roboto', Helvetica, sans-serif;
+  font-family: 'Open Sans' , sans-serif;
   color: #333;
   background-color: rgb(250, 249, 236);
   margin: 0;
@@ -38,7 +38,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: 'Stick No Bills', 'Roboto', Helvetica, sans-serif;
+  font-family: 'Open Sans' , sans-serif;
  line-height: 1.4;
 }
 
@@ -53,6 +53,8 @@ h6 {
 img {
   width: 100%;
   height: 400px;
+  padding-top: 10px;
+  border-radius: 5px;
 }
 
 /* Main Navigation Styles */
@@ -75,12 +77,23 @@ img {
   text-decoration: none;
   font-size: 1.25rem;
 }
+.main-nav ul li a:hover {
+  background-color: #f0be33; /* Change background on hover */
+  color: black;
+  border-radius: 5px;
+  text-decoration: underline;
+}
+
+ul{
+  list-style: none;
+  padding-inline-start: 0;
+}
 
 /* Form Field Styles */
 form input,
 form textarea {
   display: block;
-  width: 100%;
+  width: 90%;
   margin-bottom: 1rem;
   padding: .5rem 1rem;
 }
@@ -103,9 +116,15 @@ form textarea {
 /* Form Button Styles */
 form button {
   background-color: #9eeaf0;
-  border: 2px solid black;/* Add a black border for contrast */
   padding: 1rem; /* Add padding for clickability */
   text-transform: uppercase;
+}
+
+form button:hover {
+  background-color: #f0be33; /* Change background on hover */
+  border: 2px solid black;/* Add a black border for contrast */
+  color: rgb(111, 111, 111);
+  border-radius: 5px;
 }
 
 .site-footer {

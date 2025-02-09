@@ -8,40 +8,39 @@
   <title>Accessible Me</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;500&family=Stick+No+Bills:wght@300&display=swap"
-    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Parkinsans:wght@300..800&family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/main.css">
 </head>
 
 <body>
   <!-- Skip Links -->
-  <ul class="skip-links">
-    <li><a href="#content">Skip to main nav</a></li>
+  <ul class="skip-links" role="navigation" aria-label="Skip Links">
+    <li><a href="#main-nav">Skip to main nav</a></li>
     <li><a href="#contact-section">Skip to contact-section</a></li>
   </ul>
 
   <div class="container">
     <!-- Header Section -->
-    <header class="site-header">
-      <h1>Jam Box Studios</h1>
+    <header class="site-header" role="banner">
+      <h1 itemprop="name">Jam Box Studios</h1>
       <!-- Navigation menu -->
-      <nav class="main-nav" role="navigation" aria-label="Main Navigation">
-        <ul role="menu">
-          <li><a href="#">Home</a></li>
-          <li><a href="#">Products</a></li>
-          <li><a href="#">Reservation</a></li>
-          <li><a href="#">Studio</a></li>
+      <nav id="main-nav" class="main-nav" role="navigation" aria-label="Main Navigation">
+        <ul role="menu" itemscope itemtype="https://schema.org/SiteNavigationElement">
+          <li role="menuitem" itemprop="name"><a itemprop="url" href="#">Home</a></li>
+          <li role="menuitem" itemprop="name"><a itemprop="url" href="#">Products</a></li>
+          <li role="menuitem" itemprop="name"><a itemprop="url" href="#">Reservation</a></li>
+          <li role="menuitem" itemprop="name"><a itemprop="url" href="#">Studio</a></li>
         </ul>
       </nav>
-      <img src="https://picsum.photos/1200/900" class="banner" alt="Jam Box Studios banner image">
+      <img src="https://picsum.photos/1200/900" class="banner" alt="Jam Box Studios banner image"  role="img">
     </header>
 
     <!-- Main Content Section -->
-    <div id="content" role="main">
+    <main id="content" role="main">
       <!-- About Section -->
       <section class="about" aria-labelledby="about-title">
-        <h2 id="about-title">Welcome to Jam Box</h2>
-        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Temporibus laboriosam praesentium nostrum ipsa
+        <h2 id="about-title">Welcome to <span itemprop="name">Jam Box</span></h2>
+        <p itemprop="description">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Temporibus laboriosam praesentium nostrum ipsa
           eveniet, officia deserunt cumque eius esse enim, ipsam accusantium autem nihil quaerat sequi perferendis optio
           quia veritatis.</p>
         <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Veniam perferendis expedita sed itaque odit ipsam
@@ -49,23 +48,24 @@
           error voluptatibus.</p>
       </section>
 
-      <section class="owner" aria-labelledby="owner-title">
+      <section class="owner" aria-labelledby="owner-title" role="region">
         <!-- Owner Section -->
         <h2 id="owner-title">Meet the owner</h2>
         <ul role="list" itemscope itemtype="https://schema.org/ItemList">
-          <li itemprop="name">Name: John Doe</li>
+          <li itemprop="name">Name:  John Doe</li>
           <li itemprop="jobTitle">Title: CEO</li>
           <li itemprop="email">Email: johnjoe@jambox.ca</li>
           <li itemprop="telephone">Phone: 613-000-0000</li>
         </ul>
-        <h2>Address</h2>
 
+        <h2>Address</h2>
         <!-- Studio address -->
-        <address>
-          Jambox Studios
-          123 Guitar Road,
-          Musicville, Danceistan
-          B3T 0L0
+        <address itemscope itemtype="https://schema.org/PostalAddress">
+          <span itemprop="name">Jam Box Studios</span><br>
+          <span itemprop="streetAddress">123 Guitar Road</span>,<br>
+          <span itemprop="addressLocality">Musicville</span>,  
+          <span itemprop="addressRegion">Danceistan</span>
+          <span itemprop="postalCode">B3T 0L0</span>
         </address>
       </section>
 
@@ -75,26 +75,26 @@
 
         <form action="thanks.html">
           <label for="name">Full Name</label>
-          <input type="text" id="name" name="name" placeholder="Full Name" required>
+          <input type="text" id="name" name="name" placeholder="Full Name">
 
           <label for="email">Email</label>
-          <input type="email" id="email" name="email" placeholder="Email" required>
+          <input type="email" id="email" name="email" placeholder="Email" >
 
           <label for="subject">Subject</label>
-          <input type="text" id="subject" name="subject" placeholder="Subject" required>
+          <input type="text" id="subject" name="subject" placeholder="Subject" >
 
           <label for="message">Your Message</label>
-          <textarea id="message" name="message" placeholder="Your message" required></textarea>
+          <textarea id="message" name="message" placeholder="Your message"></textarea>
           <!-- Submit button -->
           <button type="submit">Send</button>
         </form>
       </section>
-    </div>
+    </main>
 
     <!-- Footer Section -->
     <!-- Contains copyright information -->
     <footer class="site-footer" role="contentinfo">
-      &copy; 2021 Jam Box Studios
+      &copy; <span itemprop="copyrightYear">2021</span> <span itemprop="name">Jam Box Studios</span>
     </footer>
   </div>
 </body>
