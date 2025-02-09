@@ -12,27 +12,31 @@
   <link rel="stylesheet" href="css/main.css">
 </head>
 
-<body>
+<body itemscope itemtype="https://schema.org/LocalBusiness">
   <!-- Skip Links -->
-  <ul class="skip-links" role="navigation" aria-label="Skip Links">
-    <li><a href="#main-nav">Skip to main nav</a></li>
-    <li><a href="#contact-section">Skip to contact-section</a></li>
-  </ul>
+  <nav class="skip-links" role="navigation" aria-label="Skip Links">
+    <ul role="list">
+      <li><a href="#main-nav">Skip to main nav</a></li>
+      <li><a href="#contact-section">Skip to contact-section</a></li>
+    </ul>
+  </nav>
 
   <div class="container">
     <!-- Header Section -->
     <header class="site-header" role="banner">
       <h1 itemprop="name">Jam Box Studios</h1>
+      
       <!-- Navigation menu -->
       <nav id="main-nav" class="main-nav" role="navigation" aria-label="Main Navigation">
-        <ul role="menu" itemscope itemtype="https://schema.org/SiteNavigationElement">
-          <li role="menuitem" itemprop="name"><a itemprop="url" href="#">Home</a></li>
-          <li role="menuitem" itemprop="name"><a itemprop="url" href="#">Products</a></li>
-          <li role="menuitem" itemprop="name"><a itemprop="url" href="#">Reservation</a></li>
-          <li role="menuitem" itemprop="name"><a itemprop="url" href="#">Studio</a></li>
+        <ul role="list" itemscope itemtype="https://schema.org/SiteNavigationElement">
+          <li role="none"><a itemprop="url" href="#">Home</a></li>
+          <li role="none"><a itemprop="url" href="#">Products</a></li>
+          <li role="none"><a itemprop="url" href="#">Reservation</a></li>
+          <li role="none"><a itemprop="url" href="#">Studio</a></li>
         </ul>
       </nav>
-      <img src="https://picsum.photos/1200/900" class="banner" alt="Jam Box Studios banner image"  role="img">
+
+      <img src="https://picsum.photos/1200/900" class="banner" alt="Jam Box Studios banner image">
     </header>
 
     <!-- Main Content Section -->
@@ -40,31 +44,24 @@
       <!-- About Section -->
       <section class="about" aria-labelledby="about-title">
         <h2 id="about-title">Welcome to <span itemprop="name">Jam Box</span></h2>
-        <p itemprop="description">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Temporibus laboriosam praesentium nostrum ipsa
-          eveniet, officia deserunt cumque eius esse enim, ipsam accusantium autem nihil quaerat sequi perferendis optio
-          quia veritatis.</p>
-        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Veniam perferendis expedita sed itaque odit ipsam
-          omnis, eos voluptates magni fugit culpa voluptatibus, inventore eaque, eligendi voluptatum! Voluptate iusto
-          error voluptatibus.</p>
+        <p itemprop="description">We are a premier music studio offering high-quality sound recording services.</p>
       </section>
 
-      <section class="owner" aria-labelledby="owner-title" role="region">
-        <!-- Owner Section -->
-        <h2 id="owner-title">Meet the owner</h2>
-        <ul role="list" itemscope itemtype="https://schema.org/ItemList">
-          <li itemprop="name">Name:  John Doe</li>
-          <li itemprop="jobTitle">Title: CEO</li>
-          <li itemprop="email">Email: johnjoe@jambox.ca</li>
-          <li itemprop="telephone">Phone: 613-000-0000</li>
+      <!-- Owner Section -->
+      <section class="owner" aria-labelledby="owner-title" itemscope itemtype="https://schema.org/Person">
+        <h2 id="owner-title">Meet the Owner</h2>
+        <ul role="list">
+          <li><strong>Name:</strong> <span itemprop="name">John Doe</span></li>
+          <li><strong>Title:</strong> <span itemprop="jobTitle">CEO</span></li>
+          <li><strong>Email:</strong> <a href="mailto:johnjoe@jambox.ca" itemprop="email">johnjoe@jambox.ca</a></li>
+          <li><strong>Phone:</strong> <a href="tel:6130000000" itemprop="telephone">613-000-0000</a></li>
         </ul>
 
         <h2>Address</h2>
-        <!-- Studio address -->
         <address itemscope itemtype="https://schema.org/PostalAddress">
-          <span itemprop="name">Jam Box Studios</span><br>
           <span itemprop="streetAddress">123 Guitar Road</span>,<br>
           <span itemprop="addressLocality">Musicville</span>,  
-          <span itemprop="addressRegion">Danceistan</span>
+          <span itemprop="addressRegion">Danceistan</span><br>
           <span itemprop="postalCode">B3T 0L0</span>
         </address>
       </section>
@@ -73,28 +70,28 @@
       <section id="contact-section" class="contact" aria-labelledby="contact">
         <h2 id="contact">Contact Us</h2>
 
-        <form action="thanks.html">
+        <form action="thanks.html" role="form">
           <label for="name">Full Name</label>
-          <input type="text" id="name" name="name" placeholder="Full Name">
+          <input type="text" id="name" name="name" placeholder="Full Name" aria-required="true" required>
 
           <label for="email">Email</label>
-          <input type="email" id="email" name="email" placeholder="Email" >
+          <input type="email" id="email" name="email" placeholder="Email" aria-required="true" required>
 
           <label for="subject">Subject</label>
-          <input type="text" id="subject" name="subject" placeholder="Subject" >
+          <input type="text" id="subject" name="subject" placeholder="Subject">
 
           <label for="message">Your Message</label>
           <textarea id="message" name="message" placeholder="Your message"></textarea>
+
           <!-- Submit button -->
-          <button type="submit">Send</button>
+          <button type="submit" role="button">Send</button>
         </form>
       </section>
     </main>
 
     <!-- Footer Section -->
-    <!-- Contains copyright information -->
-    <footer class="site-footer" role="contentinfo">
-      &copy; <span itemprop="copyrightYear">2021</span> <span itemprop="name">Jam Box Studios</span>
+    <footer class="site-footer" role="contentinfo" itemscope itemtype="https://schema.org/Organization">
+      &copy; <span itemprop="copyrightNotice">2021 Jam Box Studios</span>
     </footer>
   </div>
 </body>
